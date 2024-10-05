@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+        
+        <title>Document</title>
+    </head>
+    <body onload="onInit()">
+        <h1>Countries</h1>
+        
+        <form onsubmit="onGetCountryByName(event)">
+            <input type="text" placeholder="Search for countries...">
+            <button>Get Country</button>
+            <button type="button" onclick="onClearCache()">Clear Cache</button>
+        </form>
+
+        <section class="country-info hidden">
+            <section class="info">
+                <a href="" target="_blank"><h2></h2></a>
+                <p>Population: <span class="population"></span></p>
+                <p>Area: <span class="area"></span> Km&sup2;</p>
+            </section>
+            <img src="" alt="a flag">
+
+            <p>Neighbors:</p>
+            <section class="negs"></section>
+
+        </section>
+
+        <img src="img/loader.svg" alt="a loader" class="loader hidden">
+        <h2 class="no-results hidden">No Results</h2>
+
+        <script src="lib/axios.js"></script>
+
+        <script src="js/services/storage.service.js"></script>
+        <script src="js/services/country.service.js"></script>
+        
+        <script src="js/country.controller.js"></script>
+    </body>
+</html>
